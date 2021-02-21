@@ -3,7 +3,7 @@ import Hero from '../Hero/Hero';
 import Column from '../Column/Column';
 import styles from './List.scss';
 import PropTypes from 'prop-types';
-import {settings} from '../../data/dataStore';
+import {listData, settings} from '../../data/dataStore';
 import ReactHtmlParser from 'react-html-parser';
 import Creator from '../Creator/Creator';
 
@@ -19,6 +19,7 @@ class List extends React.Component {
   }
   static defaultProps = {
     description: settings.defaultListDescription,
+    source: listData.image,
   }
 
   addColumn(title){
@@ -30,9 +31,9 @@ class List extends React.Component {
             key: state.columns.length ? state.columns[state.columns.length-1].key+1 : 0,
             title,
             icon: 'list-alt',
-            cards: []
-          }
-        ]
+            cards: [],
+          },
+        ],
       }
     ));
   }
@@ -47,7 +48,7 @@ class List extends React.Component {
           </div>
 
           <div className={styles.columns}>
-            {this.state.columns.map(({key, ...columnProps}) => (
+            {this.state.columns.map( ({key, ...columnProps}) => (
             <Column key={key} {...columnProps} />
             ))}
           </div>
@@ -57,7 +58,7 @@ class List extends React.Component {
           </div>
 
       </section>
-    )
+    );
   }
 }
 export default List;
