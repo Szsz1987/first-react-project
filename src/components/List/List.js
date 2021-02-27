@@ -23,7 +23,6 @@ class List extends React.Component {
     const {title, image, description, columns} = this.props;
     return (
       <section className={styles.component}>
-<<<<<<< HEAD
 
         <Hero titleText={title} imageSource={image} />
 
@@ -35,22 +34,6 @@ class List extends React.Component {
           {columns.map(columnData => (
             <Column key={columnData.id} {...columnData} />
           ))}
-=======
-        <Hero titleText={this.props.title} imageSource={this.props.source} />
-          
-        <div className={styles.description}>
-          {ReactHtmlParser(this.props.description)}
-        </div>
-
-        <div className={styles.columns}>
-          {this.state.columns.map( ({key, ...columnProps}) => (
-            <Column key={key} {...columnProps} />
-          ))}
-        </div>
-
-        <div className={styles.creator}>
-          <Creator text={settings.columnCreatorText} action={title => this.addColumn(title)}/>
->>>>>>> 2db693c3e3d2284cf6188f988fc806c89f51d49a
         </div>
 
         {/*
