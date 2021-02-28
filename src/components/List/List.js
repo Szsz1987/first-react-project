@@ -5,14 +5,15 @@ import styles from './List.scss';
 import PropTypes from 'prop-types';
 import {listData, settings} from '../../data/dataStore';
 import ReactHtmlParser from 'react-html-parser';
-//import Creator from '../Creator/Creator';
+import Creator from '../Creator/Creator';
 
 class List extends React.Component {
-  static propTypes = { // declaration of types
+  static propTypes = { // declaration of types // props z właściwością
     title: PropTypes.node.isRequired,
     description: PropTypes.node,
     columns: PropTypes.array,
     image: PropTypes.string,
+    addColumn: PropTypes.func,
   }
   static defaultProps = {
     description: settings.defaultListDescription,
@@ -20,7 +21,7 @@ class List extends React.Component {
   }
   
   render() {
-    const {title, image, description, columns} = this.props;
+    const {title, image, description, columns, addColumn} = this.props;
     return (
       <section className={styles.component}>
 
@@ -36,10 +37,9 @@ class List extends React.Component {
           ))}
         </div>
 
-        {/*
         <div className={styles.creator}>
-          <Creator text={settings.columnCreatorText} action={title => this.addColumn(title)}/>
-          </div>*/}
+           <Creator text={settings.columnCreatorText} action={addColumn}/>
+          </div>
       </section>
     );
   }
