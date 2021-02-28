@@ -14,6 +14,6 @@ const mapDispatchToProps = (dispatch, props) => ({
     title,
   })), // mapDispatchToProps to funkcja, która nadaje komponentowi propsy, 
 }); // w których znajdą się funkcje wysyłające akcje do magazynu. 
-// Pamiętaj, że akcja jest zgłoszeniem chęci zmiany stanu aplikacji. 
+// Pamiętaj, że akcja jest zgłoszeniem chęci zmiany stanu aplikacji 
 
 export default connect(mapStateToProps, mapDispatchToProps)(List); 
