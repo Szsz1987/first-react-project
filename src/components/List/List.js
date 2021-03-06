@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import {listData, settings} from '../../data/dataStore';
 import ReactHtmlParser from 'react-html-parser';
 import Creator from '../Creator/Creator';
+import Container from '../Container/Container';
 
 class List extends React.Component {
   static propTypes = { // declaration of types // props z właściwością
@@ -23,21 +24,24 @@ class List extends React.Component {
   render() {
     const {title, image, description, columns, addColumn} = this.props;
     return (
-      <section className={styles.component}>
+      <Container>
+        <section className={styles.component}>
 
-        <Hero titleText={title} imageSource={image} />
-        <div className={styles.description}>
-          {ReactHtmlParser(description)}
-        </div>
-        <div className={styles.columns}>
-          {columns.map(columnData => (
-            <Column key={columnData.id} {...columnData} />
-          ))}
-        </div>
-        <div className={styles.creator}>
-        <Creator text={settings.columnCreatorText} action={addColumn}/>
+          <Hero titleText={title} imageSource={image} />
+          <div className={styles.description}>
+            {ReactHtmlParser(description)}
           </div>
-      </section>
+          <div className={styles.columns}>
+            {columns.map(columnData => (
+              <Column key={columnData.id} {...columnData} />
+            ))}
+          </div>
+          <div className={styles.creator}>
+          <Creator text={settings.columnCreatorText} action={addColumn}/>
+          </div>
+            
+        </section>
+      </Container>
     );
   }
 }
