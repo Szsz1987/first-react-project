@@ -7,8 +7,12 @@ const baseConfig = () => ({
   entry: './src/index.js',
   output: {
     path: path.join(__dirname, 'dist'),
+    publicPath: '/', // to ustawienie wskaże główne miejsce przechowywania assetów przez naszą aplikację. Potrzebujemy tego ustawienia, ponieważ za chwilę nasza aplikacja będzie działała pod adresami, które domyślnie są traktowane jako podkatalogi projektu.
     filename: 'scripts_bundle.js',
   },
+  devServer: {
+    historyApiFallback: true, // Ustawienie historyApiFallback umożliwi serwowanie pliku index.html, a zarazem naszej aplikacji w sytuacjach, w których serwer zwróciłby błąd 404.
+  },  
   module: {
     rules: [
       {
