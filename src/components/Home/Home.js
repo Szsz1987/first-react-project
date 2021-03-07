@@ -18,7 +18,7 @@ class Home extends React.Component {
         <h2 className={styles.subtitle}>{subtitle}</h2>
         <Search />
         {lists.map(listData => (
-          <List key={listData.id} {...listData} />
+            <List key={listData.id} {...listData} />
         ))}
       </main>
     );

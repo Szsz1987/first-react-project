@@ -11,5 +11,4 @@ const Container = ({children}) => (
 Container.propTypes = {
   children: PropTypes.node,
 };
-
-export default Container; 
+export default Container;

@@ -12,8 +12,8 @@ const mapDispatchToProps = (dispatch, props) => ({
   addColumn: title => dispatch(createActionAddColumn({
     listId: props.id,
     title,
-  })), // mapDispatchToProps to funkcja, która nadaje komponentowi propsy, 
+  })),// mapDispatchToProps to funkcja, która nadaje komponentowi propsy, 
 }); // w których znajdą się funkcje wysyłające akcje do magazynu. 
 // Pamiętaj, że akcja jest zgłoszeniem chęci zmiany stanu aplikacji 
 
-export default connect(mapStateToProps, mapDispatchToProps)(List); 
+export default connect(mapStateToProps, mapDispatchToProps)(List);

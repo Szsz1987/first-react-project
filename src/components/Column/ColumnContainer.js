@@ -6,6 +6,7 @@ import {createActionAddCard} from '../../redux/cardsRedux';
 const mapStateToProps = (state, props) => ({
   cards: getCardsForColumn(state, props.id),
 });
+
 const mapDispatchToProps = (dispatch, props) => ({
   addCard: title => dispatch(createActionAddCard({
     columnId: props.id,
@@ -13,4 +14,4 @@ const mapDispatchToProps = (dispatch, props) => ({
   })),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Column);  
+export default connect(mapStateToProps, mapDispatchToProps)(Column);
